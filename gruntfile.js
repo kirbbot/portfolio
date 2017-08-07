@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dist/css/styles.min.css': ['src/css/bower.css', 'src/css/style.css']
+          'dist/css/styles.min.css': ['src/css/bower.css', 'src/css/styles.css']
         }
       }
     },
@@ -90,6 +90,10 @@ module.exports = function(grunt) {
       less: {
         files: ['bower.json'],
         tasks: ['exec:bower_install']
+      },
+      js:{
+        files: ['src/js/**/*.js'],
+        tasks: ['bower_concat', 'ngAnnotate', 'concat', 'uglify']
       }
     },
 
