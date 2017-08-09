@@ -12,13 +12,7 @@
 </head>
 <body ng-app="mshhllApp" ng-controller="mainController">
 
-<div class="main">
-	<ul id="List_projects">
-		<li ng-repeat="project in projects" class="list_projects-project" back-img="{{ project.listImgUrl }}" ng-click="open_project(project)">
-			<h2 class="list_projects-project-name">{{ project.title }}</h2>
-		</li>
-	</ul>
-</div>
+	<div class="main" ng-view></div>
  
 </body>
 </html>

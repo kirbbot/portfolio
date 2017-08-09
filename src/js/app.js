@@ -3,13 +3,17 @@ var app = angular.module('mshhllApp',[
 	'ngRoute'
 ]);
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(function ($routeProvider, $locationProvider) {
+	$locationProvider.hashPrefix('');
 	
 	$routeProvider
-		.when('/project', {
+		.when('/project/:Id', {
 			templateUrl: 'views/project.htm'
 		})
+		.when('/', {
+			templateUrl: 'views/projectList.htm'
+		})
 		.otherwise({
-			redirectTo: '/index.html'
+			redirectTo: '/'
 		});
-}]);
+});
