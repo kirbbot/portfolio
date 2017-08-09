@@ -38,7 +38,7 @@ module.exports = function(grunt) {
 
     concat: {
       js: {
-        src: ['js/app.js'],
+        src: ['js/concat/app.js', 'js/concat/mainController.js'],
         dest: 'js/concat/app.js'
       }
     },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '../dist/js/app.min.js' : 'js/concat/app.js',
+          '../dist/js/app.min.js' : ['js/concat/app.js'],
           '../dist/js/bower.min.js' : 'js/concat/bower.js'
         }
       }
