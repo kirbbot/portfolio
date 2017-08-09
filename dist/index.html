@@ -1,0 +1,24 @@
+<!-- public/views/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Michelle Kirby</title>
+
+    <link rel="stylesheet" href="dist/css/styles.min.css">
+    <script src="dist/js/bower.min.js"></script>
+    <script src="dist/js/app.min.js"></script>
+
+</head>
+<body ng-app="mshhllApp" ng-controller="mainController">
+
+<div class="main">
+	<ul id="List_projects">
+		<li ng-repeat="project in projects" class="list_projects-project" back-img="{{ project.listImgUrl }}" ng-click="open_project(project)">
+			<h2 class="list_projects-project-name">{{ project.title }}</h2>
+		</li>
+	</ul>
+</div>
+ 
+</body>
+</html>
