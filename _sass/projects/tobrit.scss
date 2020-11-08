@@ -1,0 +1,101 @@
+/*
+        TOBRIT
+*/
+#TOBRIT_Canvas{
+        position:absolute;
+        top:0;
+        height:100vh;
+        width:100vw;
+}
+#TOBRIT{
+        padding:60px;
+        &.grid{
+                position:absolute;
+                top:0;
+                width:100vw;
+                height:100vh;
+                overflow-y:scroll;
+
+                .cell{
+                        
+                }
+                label{
+                        text-align: center;
+                        padding:2px 5px;
+                        margin-top:5px;
+                        font-size:10px;
+                        text-transform:uppercase;
+                }
+        }
+
+}
+
+.grid{
+        .cell{
+                img{
+                        max-width:100%;
+                        display: block;
+                }
+        }
+        @include tablet{
+                .row{
+                        @include flexbox();
+                        @include flex-direction(row);
+                        @include justify-content(center);
+                        &.space-around{
+                                @include justify-content(space-around);
+                        }
+                        &.space-between{
+                                @include justify-content(space-between);   
+                        }
+                        .cell{
+                                @include flexbox();
+                                @include flex-direction(column);
+                                &.center_w{
+                                        @include align-items(center);
+                                }
+                                &.center_h{
+                                        @include justify-content(center);
+                                }
+                                &.start_h{
+                                        @include justify-content(flex-start);
+                                }
+                                &.space-between{
+                                        @include justify-content(space-between);   
+                                }
+                                &.flex-end{
+                                        @include justify-content(flex-end);
+                                }
+                                .img-container{
+                                        @include flexbox();
+                                        @include flex-direction(row);
+                                        @include flex-wrap(nowrap);
+                                        @include justify-content(center);
+                                        max-height: 100%;
+                                        padding:20px;
+                                        &.nowrap{
+                                                @include flex-wrap(nowrap);
+                                        }
+                                        &.center{
+                                                @include justify-content(center);
+                                        }
+                                }
+                        }
+                }
+                @include flexbox();
+                @include flex-direction(column);
+                @include flex-wrap(nowrap);
+                .cell{
+                        &.center{
+                                @include justify-content(center);
+                        }
+                        img{
+                                max-height: 600px;
+                        }
+             }
+        }
+        @include desktop{
+                .cell{
+                }
+        }
+}

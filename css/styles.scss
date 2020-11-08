@@ -1,0 +1,25 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+# https://github.com/jekyll/jekyll-sass-converter/blob/master/docs/assets/css/main.scss
+---
+
+@import "resets";
+@import "mixins";
+@import "typography";
+
+// Projects
+@import "projects/tobrit";
+
+*{
+        border:border-box;
+}
+html,
+body{
+        position:relative;
+        @include flexbox();
+        width:100vw;
+        height:100vh;
+        min-width: fit-content;
+        margin:0;
+}
